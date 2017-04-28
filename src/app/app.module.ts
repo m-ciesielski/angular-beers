@@ -5,20 +5,25 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { BeerDetailComponent } from './beer-detail/beer-detail.component';
-import {BeersComponent} from './beers.component';
+import {BeersComponent} from './beers/beers.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {BeerService} from './beer.service';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     BeerDetailComponent,
-    BeersComponent
+    BeersComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [BeerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

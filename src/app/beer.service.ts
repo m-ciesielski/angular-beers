@@ -8,6 +8,9 @@ export class BeerService {
   getBeers(): Promise<Beer[]> {
     return Promise.resolve(BEERS);
   };
+  getBeer(id: Number): Promise<Beer> {
+    return Promise.resolve(this.getBeers().then(beers => beers.find(b => b.id === id)));
+  };
   getBeersSlowly(): Promise<Beer[]> {
     return new Promise(resolve => {
       // Simulate server latency with 2 second delay

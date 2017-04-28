@@ -1,27 +1,30 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
+import 'rxjs/add/operator/switchMap';
+
 import {Beer} from '../beer';
+import {BeerService} from '../beer.service';
 
 @Component({
   selector: 'app-beer-detail',
   templateUrl: './beer-detail.component.html',
-  styleUrls: ['./beer-detail.component.css'],
-  template: `
-    <div *ngIf="beer">
-      <h2>{{beer.name}} details!</h2>
-      <div><label>id: </label>{{beer.id}}</div>
-      <div>
-        <label>name: </label>
-        <input [(ngModel)]="beer.name" placeholder="name"/>
-      </div>
-    </div>
-  `
+  styleUrls: ['./beer-detail.component.css']
 })
 export class BeerDetailComponent implements OnInit {
   @Input() beer: Beer;
 
-  constructor() { }
+  constructor(private beerService: BeerService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
+    this.route.params.
+    switchMap((params: Params) => this.beerService.getBeer(+params['id']))
+      .subscribe(beer => this.beer = beer);
+  }
+
+  // TODO: Add canDeactivate guard, so user cannot exit app using goBack method
+  goBack(): void {
+    this.location.back();
   }
 
 }
