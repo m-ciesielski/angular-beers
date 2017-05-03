@@ -1,4 +1,4 @@
-import {Beer} from '../beer';
+import {Beer} from './beer';
 
 export const BEERS: Beer[] = [
   { id: 11, name: 'Mr. Nice' },

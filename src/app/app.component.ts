@@ -6,10 +6,11 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css'],
   template: `
     <h1>{{title}}</h1>
-    <nav>
-      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-      <a routerLink="/beers" routerLinkActive="active">Beers</a>
-    </nav>
+    <app-header></app-header>
+    <!--<nav>-->
+      <!--<a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>-->
+      <!--<a routerLink="/beers" routerLinkActive="active">Beers</a>-->
+    <!--</nav>-->
     <router-outlet></router-outlet>
     `
 })

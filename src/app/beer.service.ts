@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Beer} from './beer';
-import {BEERS} from './beer-detail/mock-beers';
+import {BEERS} from './mock-beers';
 
 @Injectable()
 export class BeerService {

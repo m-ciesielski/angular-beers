@@ -1,0 +1,6 @@
+<button md-button [mdMenuTriggerFor]="menu">Breweries</button>
+<md-menu #menu="mdMenu">
+  <button md-menu-item *ngFor="let brewery of breweries">
+    {{brewery.name}}
+  </button>
+</md-menu>

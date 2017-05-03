@@ -10,7 +10,6 @@ import {Router} from '@angular/router';
   templateUrl: './beers.component.html'
 })
 export class BeersComponent implements OnInit {
-  title = 'app works!';
   selectedBeer: Beer;
   beers: Beer[];
 
