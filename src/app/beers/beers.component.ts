@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Beer} from '../beer';
 import {BeerService} from '../beer.service';
 import {Router} from '@angular/router';
+import {MdSidenavToggleResult} from '@angular/material';
 
 @Component({
   selector: 'app-beers',

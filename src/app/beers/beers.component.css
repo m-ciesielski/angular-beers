@@ -1,3 +1,7 @@
+html, body {
+  height:100%;
+}
+
 .selected {
   background-color: #CFD8DC !important;
   color: white;
@@ -44,4 +48,21 @@
   height: 1.8em;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
+}
+
+.sidenav {
+  padding: 20px;
+}
+
+.sidenav-content {
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidenav-container {
+  /*border: 3px solid black;*/
+  position: fixed;
+  min-height: 100%;
+  display: flex;
 }
