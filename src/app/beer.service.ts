@@ -8,7 +8,7 @@ export class BeerService {
   getBeers(): Promise<Beer[]> {
     return Promise.resolve(BEERS);
   };
-  getBeer(id: Number): Promise<Beer> {
+  getBeer(id: number): Promise<Beer> {
     return Promise.resolve(this.getBeers().then(beers => beers.find(b => b.id === id)));
   };
   getBeersSlowly(): Promise<Beer[]> {
