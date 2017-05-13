@@ -1,0 +1,15 @@
+<div *ngIf="brewery">
+  <h2>{{brewery.name}} details!</h2>
+  <div><label>id: </label>{{brewery.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="brewery.name" placeholder="name"/>
+  </div>
+  <div>
+    <label>beers: </label>
+    <li *ngFor="let beer of brewery.beers">
+      <span class="badge">{{beer.id}}</span> {{beer.name}}
+    </li>
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>

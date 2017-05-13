@@ -1,8 +1,9 @@
 import {Beer} from './beer';
+import {BREWERIES} from './mock-breweries';
 
 export const BEERS: Beer[] = [
-  { id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
+  { id: 11, brewery: BREWERIES[0], name: 'Mr. Nice' },
+  { id: 12, brewery: BREWERIES[0], name: 'Narco' },
   { id: 13, name: 'Bombasto' },
   { id: 14, name: 'Celeritas' },
   { id: 15, name: 'Magneta' },

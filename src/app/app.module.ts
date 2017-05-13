@@ -14,6 +14,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { HeaderMenuBreweryComponent } from './header-menu-brewery/header-menu-brewery.component';
 import {BreweryService} from './brewery.service';
+import { BreweryDetailComponent } from './brewery-detail/brewery-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {BreweryService} from './brewery.service';
     BeersComponent,
     DashboardComponent,
     HeaderComponent,
-    HeaderMenuBreweryComponent
+    HeaderMenuBreweryComponent,
+    BreweryDetailComponent
   ],
   imports: [
     BrowserModule,

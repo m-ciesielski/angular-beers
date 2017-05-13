@@ -1,4 +1,5 @@
 import {Brewery} from './brewery';
+import {BEERS} from './mock-beers';
 
 export const BREWERIES: Brewery[] = [
   { id: 11, name: 'SuperBrowar' },

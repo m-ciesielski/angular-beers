@@ -5,5 +5,9 @@
     <label>name: </label>
     <input [(ngModel)]="beer.name" placeholder="name"/>
   </div>
+  <div>
+    <label>brewery: </label>
+    <button (click)="goToBrewery()">Go to brewery page</button>
+  </div>
   <button (click)="goBack()">Back</button>
 </div>

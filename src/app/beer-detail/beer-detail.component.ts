@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
+import {Router} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 import {Beer} from '../beer';
@@ -14,7 +15,8 @@ import {BeerService} from '../beer.service';
 export class BeerDetailComponent implements OnInit {
   @Input() beer: Beer;
 
-  constructor(private beerService: BeerService, private route: ActivatedRoute, private location: Location) { }
+  constructor(private beerService: BeerService, private route: ActivatedRoute, private location: Location,
+  private router: Router) { }
 
   ngOnInit() {
     this.route.params.
@@ -26,5 +28,7 @@ export class BeerDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-
+  goToBrewery(): void {
+    this.router.navigate(['/breweries', this.beer.brewery.id]);
+  }
 }
