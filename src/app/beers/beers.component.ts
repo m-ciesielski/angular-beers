@@ -11,7 +11,6 @@ import {MdSidenavToggleResult} from '@angular/material';
   templateUrl: './beers.component.html'
 })
 export class BeersComponent implements OnInit {
-  selectedBeer: Beer;
   beers: Beer[];
 
   constructor(private beerService: BeerService, private router: Router) { }
@@ -21,15 +20,18 @@ export class BeersComponent implements OnInit {
   }
 
   onSelect(beer: Beer): void {
-    this.selectedBeer = beer;
+    this.gotoBeer(beer);
   }
 
   getBeers(): void {
     this.beerService.getBeers().then(beers => this.beers = beers);
   }
 
-  gotoBeer(): void {
-    this.router.navigate(['/beers', this.selectedBeer.id]);
+  gotoBeer(beer: Beer): void {
+    this.router.navigate(['/beers', beer.id]);
+  }
+  goToAddBeer(): void {
+    this.router.navigate(['/beers/add']);
   }
 
 }

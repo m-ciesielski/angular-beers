@@ -2,7 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {MdButtonModule, MdMenuModule, MdSidenavModule, MdToolbarModule} from '@angular/material';
+import {
+  MdButtonModule, MdIconModule, MdInputModule, MdListModule, MdMenuModule, MdSidenavModule,
+  MdToolbarModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -15,6 +18,9 @@ import { HeaderComponent } from './header/header.component';
 import { HeaderMenuBreweryComponent } from './header-menu-brewery/header-menu-brewery.component';
 import {BreweryService} from './brewery.service';
 import { BreweryDetailComponent } from './brewery-detail/brewery-detail.component';
+import { BeerFormComponent } from './beer-form/beer-form.component';
+import {BeerAddComponent} from './beer-add/beer-add.component';
+import { BreweriesComponent } from './breweries/breweries.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,10 @@ import { BreweryDetailComponent } from './brewery-detail/brewery-detail.componen
     DashboardComponent,
     HeaderComponent,
     HeaderMenuBreweryComponent,
-    BreweryDetailComponent
+    BreweryDetailComponent,
+    BeerFormComponent,
+    BeerAddComponent,
+    BreweriesComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +44,9 @@ import { BreweryDetailComponent } from './brewery-detail/brewery-detail.componen
     MdMenuModule,
     MdToolbarModule,
     MdButtonModule,
-    MdSidenavModule
+    MdInputModule,
+    MdListModule,
+    MdIconModule
   ],
   providers: [BeerService, BreweryService],
   bootstrap: [AppComponent]

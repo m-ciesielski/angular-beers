@@ -1,17 +1,10 @@
-<md-sidenav-container class="sidenav-container">
-  <md-sidenav #sidenav mode="side" opened="true" class="sidenav">
-    <ul class="beers" style="flex: 1">
-      <li *ngFor="let beer of beers" (click)="onSelect(beer)" [class.selected]="beer === selectedBeer" style="flex: 1">
-        <span class="badge">{{beer.id}}</span> {{beer.name}}
-      </li>
-    </ul>
-  </md-sidenav>
-
-  <div *ngIf="selectedBeer" class="sidenav-content">
-    <h2>
-      {{selectedBeer.name | uppercase}}
-    </h2>
-    <button (click)="gotoBeer()">View beer details</button>
-  </div>
-</md-sidenav-container>
+<div class ="center">
+  <h2>Beers:</h2>
+  <button md-raised-button (click)="goToAddBeer()">Add a new beer</button>
+  <md-list class="beers">
+    <md-list-item *ngFor="let beer of beers" (click)="onSelect(beer)">
+      {{beer.name}}
+    </md-list-item>
+  </md-list>
+</div>
 

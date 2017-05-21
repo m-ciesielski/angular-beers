@@ -17,4 +17,7 @@ export class BeerService {
       setTimeout(() => resolve(this.getBeers()), 2000);
     });
   }
+  addBeer(beer: Beer) {
+    BEERS.push(beer);
+  }
 }

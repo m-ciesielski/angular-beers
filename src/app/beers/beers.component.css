@@ -26,7 +26,7 @@ html, body {
   background-color: #BBD8DC !important;
   color: white;
 }
-.beers li:hover {
+.beers md-list-item:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
@@ -35,34 +35,9 @@ html, body {
   position: relative;
   top: -3px;
 }
-.beers .badge {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #607D8B;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-}
 
-.sidenav {
-  padding: 20px;
-}
-
-.sidenav-content {
-  display: block;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidenav-container {
-  /*border: 3px solid black;*/
-  position: fixed;
-  min-height: 100%;
-  display: flex;
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }

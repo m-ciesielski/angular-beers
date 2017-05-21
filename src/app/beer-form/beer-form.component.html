@@ -1,0 +1,16 @@
+<div class="center">
+  <h1>Add beer</h1>
+  <form (ngSubmit)="addBeer()" #beerForm="ngForm">
+    <p>
+      <md-input-container>
+        <input mdInput placeholder="Name" value="name" required [(ngModel)]="model.name" name="name">
+      </md-input-container>
+    </p>
+    <p>
+      <md-input-container>
+        <input mdInput placeholder="Price" value="0" required [(ngModel)]="model.price" name="price">
+      </md-input-container>
+    </p>
+    <button md-button type="submit" [disabled]="!beerForm.form.valid">Submit</button>
+  </form>
+</div>

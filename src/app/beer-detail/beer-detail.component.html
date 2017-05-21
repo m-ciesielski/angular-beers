@@ -1,13 +1,22 @@
 <div *ngIf="beer">
-  <h2>{{beer.name}} details!</h2>
-  <div><label>id: </label>{{beer.id}}</div>
+  <h2>{{beer.name}} details:</h2>
+  <p>
+    <md-input-container>
+      <input mdInput [(ngModel)]="beer.id" placeholder="ID" disabled/>
+    </md-input-container>
+  </p>
+  <p>
+    <md-input-container>
+      <input mdInput [(ngModel)]="beer.name" placeholder="Name"/>
+    </md-input-container>
+  </p>
+  <p>
+    <md-input-container>
+      <input mdInput [(ngModel)]="beer.brewery.name" placeholder="Brewery"/>
+    </md-input-container>
+    <button md-raised-button (click)="goToBrewery()" id="breweryButton" md-8>Go to brewery page</button>
+  </p>
   <div>
-    <label>name: </label>
-    <input [(ngModel)]="beer.name" placeholder="name"/>
   </div>
-  <div>
-    <label>brewery: </label>
-    <button (click)="goToBrewery()">Go to brewery page</button>
-  </div>
-  <button (click)="goBack()">Back</button>
+  <button md-raised-button (click)="goBack()">Back</button>
 </div>
