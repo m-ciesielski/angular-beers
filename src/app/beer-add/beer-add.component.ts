@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Beer} from '../beer';
 import {BeerService} from '../beer.service';
 import {Location} from '@angular/common';
+import {BreweryService} from '../brewery.service';
+import {Brewery} from '../brewery';
 
 @Component({
   selector: 'app-beer-add',
@@ -10,14 +12,15 @@ import {Location} from '@angular/common';
 })
 export class BeerAddComponent implements OnInit {
   model = new Beer();
-  constructor(private beerService: BeerService, private location: Location) { }
+  breweries: Brewery[];
+  constructor(private beerService: BeerService, private breweryService: BreweryService, private location: Location) { }
   ngOnInit() {
     this.model.id = 999;
+    this.breweryService.getBreweries().then(breweries => this.breweries = breweries);
   }
   addBeer() {
     console.log(this.model);
     this.beerService.addBeer(this.model);
-    this.beerService.getBeers().then(beers => console.log(beers));
     this.goBack();
   }
   // TODO: Add canDeactivate guard, so user cannot exit app using goBack method
