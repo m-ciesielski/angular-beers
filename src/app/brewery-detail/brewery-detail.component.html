@@ -10,10 +10,10 @@
       <input mdInput [(ngModel)]="brewery.name" placeholder="Name"/>
     </md-input-container>
   </p>
-  <p>
+  <p *ngIf="beers">
     <label for="beers">Beers: </label>
     <md-list *ngFor="let beer of beers" id="beers">
-      <md-list-item>{{beer.name}} </md-list-item>
+      <md-list-item (click)="onSelect(beer)">{{beer.name}} </md-list-item>
     </md-list>
   </p>
   <div>
