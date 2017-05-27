@@ -2,6 +2,10 @@
   Beers!
   <span class="app-toolbar-filler"></span>
   <span class="app-toolbar-filler"></span>
-  <button md-button (click)="goToBeers()">Beers</button>
-  <button md-button (click)="goToBreweries()">Breweries</button>
+  <button md-button routerLink="/beers" routerLinkActive="active">
+    Beers
+  </button>
+  <button md-button routerLink="/breweries" routerLinkActive="active">
+    Breweries
+  </button>
 </md-toolbar>
