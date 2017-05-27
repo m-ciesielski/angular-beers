@@ -20,4 +20,7 @@ export class BeerService {
   addBeer(beer: Beer) {
     BEERS.push(beer);
   }
+  deleteBeer(id: number) {
+    console.log('Delete beer with id: ' + id);
+  }
 }

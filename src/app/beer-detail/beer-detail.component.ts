@@ -15,8 +15,8 @@ import {BeerService} from '../beer.service';
 export class BeerDetailComponent implements OnInit {
   @Input() beer: Beer;
 
-  constructor(private beerService: BeerService, private route: ActivatedRoute, private location: Location,
-  private router: Router) { }
+  constructor(private route: ActivatedRoute, private location: Location,
+  private router: Router, private beerService: BeerService) { }
 
   ngOnInit() {
     this.route.params.
@@ -30,5 +30,8 @@ export class BeerDetailComponent implements OnInit {
   }
   goToBrewery(): void {
     this.router.navigate(['/breweries', this.beer.brewery.id]);
+  }
+  deleteBeer(): void {
+    this.beerService.deleteBeer(this.beer.id);
   }
 }
