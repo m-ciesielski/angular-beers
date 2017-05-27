@@ -24,8 +24,8 @@ export class BreweryDetailComponent implements OnInit {
     switchMap((params: Params) => this.breweryService.getBrewery(+params['id']))
       .subscribe(brewery => this.brewery = brewery);
     // TODO: FIX this
-    this.beerService.getBeers().then(
-      beers => this.beers = beers.filter(b => b.brewery !== undefined).filter(b => b.brewery.id === this.brewery.id));
+    // this.beerService.getBeers().then(
+    //   beers => this.beers = beers.filter(b => b.brewery !== undefined).filter(b => b.brewery.id === this.brewery.id));
   }
   // TODO: Add canDeactivate guard, so user cannot exit app using goBack method
   goBack(): void {

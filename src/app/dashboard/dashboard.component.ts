@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   constructor(private beerService: BeerService) { }
 
   ngOnInit(): void {
-    this.beerService.getBeers().then(beers => this.beers = beers.slice(1, 5));
+    this.beerService.getBeers().subscribe(beers => this.beers = beers.slice(1, 5));
+    // this.beerService.getBeers().then(beers => this.beers = beers.slice(1, 5));
   }
 }

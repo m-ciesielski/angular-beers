@@ -21,6 +21,9 @@ import { BreweryDetailComponent } from './brewery-detail/brewery-detail.componen
 import { BeerFormComponent } from './beer-form/beer-form.component';
 import {BeerAddComponent} from './beer-add/beer-add.component';
 import { BreweriesComponent } from './breweries/breweries.component';
+import {StoreModule} from '@ngrx/store';
+import {BEERS} from './mock-beers';
+import {beersReducer} from '../beerReducer';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { BreweriesComponent } from './breweries/breweries.component';
     MdButtonModule,
     MdInputModule,
     MdListModule,
-    MdIconModule
+    MdIconModule,
+    StoreModule.provideStore({ beers: beersReducer })
   ],
   providers: [BeerService, BreweryService],
   bootstrap: [AppComponent]

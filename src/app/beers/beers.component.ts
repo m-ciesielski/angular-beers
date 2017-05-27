@@ -24,7 +24,7 @@ export class BeersComponent implements OnInit {
   }
 
   getBeers(): void {
-    this.beerService.getBeers().then(beers => this.beers = beers);
+    this.beerService.getBeers().subscribe(beers => this.beers = beers);
   }
 
   gotoBeer(beer: Beer): void {
