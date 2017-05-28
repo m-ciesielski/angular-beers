@@ -22,5 +22,6 @@ export class BeerService {
   }
   deleteBeer(id: number) {
     console.log('Delete beer with id: ' + id);
+    BEERS.splice(id, 1);
   }
 }

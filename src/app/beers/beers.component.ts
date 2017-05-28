@@ -12,6 +12,7 @@ import {MdSidenavToggleResult} from '@angular/material';
 })
 export class BeersComponent implements OnInit {
   beers: Beer[];
+  nameFilter: string;
 
   constructor(private beerService: BeerService, private router: Router) { }
 

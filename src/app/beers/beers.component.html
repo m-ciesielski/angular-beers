@@ -1,9 +1,16 @@
 <div class ="center">
   <h2>Beers:</h2>
   <button md-raised-button (click)="goToAddBeer()">Add a new beer</button>
+  <p>
+    <md-input-container>
+      <input mdInput placeholder="Filter by name" value="Filter by name" [(ngModel)]="nameFilter" name="nameFilter">
+    </md-input-container>
+  </p>
   <md-list class="beers">
-    <md-list-item *ngFor="let beer of beers" (click)="onSelect(beer)">
-      {{beer.name}}
+    <md-list-item *ngFor="let beer of beers | beerFilter : 'name' : nameFilter" (click)="onSelect(beer)">
+      <md-icon md-list-icon>folder</md-icon>
+      <h4 md-line>{{beer.name}}</h4>
+      <p md-line *ngIf="beer.brewery">{{beer.brewery.name}}</p>
     </md-list-item>
   </md-list>
 </div>

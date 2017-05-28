@@ -33,5 +33,6 @@ export class BeerDetailComponent implements OnInit {
   }
   deleteBeer(): void {
     this.beerService.deleteBeer(this.beer.id);
+    this.goBack();
   }
 }
