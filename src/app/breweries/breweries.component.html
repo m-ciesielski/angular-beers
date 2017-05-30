@@ -1,6 +1,6 @@
 <div class ="center">
   <h2>Breweries:</h2>
-  <button md-raised-button (click)="goToAddBeer()">Add a new brewery</button>
+  <button md-raised-button routerLink="/breweries/add" routerLinkActive="active">Add a new brewery</button>
   <md-list class="breweries">
     <md-list-item *ngFor="let brewery of breweries" (click)="onSelect(brewery)">
       {{brewery.name}}

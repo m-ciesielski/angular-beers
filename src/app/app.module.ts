@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
   MdButtonModule, MdIconModule, MdInputModule, MdLineModule, MdListModule, MdMenuModule, MdSelectModule,
-  MdSidenavModule,
   MdToolbarModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -22,6 +21,8 @@ import { BreweryDetailComponent } from './brewery-detail/brewery-detail.componen
 import {BeerAddComponent} from './beer-add/beer-add.component';
 import { BreweriesComponent } from './breweries/breweries.component';
 import { BeerFilterPipe } from './pipes/beer-filter.pipe';
+import { BreweryAddComponent } from './brewery-add/brewery-add.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { BeerFilterPipe } from './pipes/beer-filter.pipe';
     BreweryDetailComponent,
     BeerAddComponent,
     BreweriesComponent,
-    BeerFilterPipe
+    BeerFilterPipe,
+    BreweryAddComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { BeerFilterPipe } from './pipes/beer-filter.pipe';
     MdListModule,
     MdIconModule,
     MdSelectModule,
-    MdLineModule
+    MdLineModule,
+    NgxPaginationModule
   ],
   providers: [BeerService, BreweryService],
   bootstrap: [AppComponent]

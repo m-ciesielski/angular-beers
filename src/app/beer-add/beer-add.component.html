@@ -16,6 +16,9 @@
         <md-option *ngFor="let brewery of breweries" [value]="brewery">{{ brewery.name }}</md-option>
       </md-select>
     </p>
-    <button md-raised-button type="submit" [disabled]="!beerForm.form.valid">Submit</button>
+    <button md-raised-button type="submit" [disabled]="!beerForm.form.valid" class="submit-button">Submit</button>
   </form>
+  <p>
+    <button md-raised-button (click)="goBack()">Back</button>
+  </p>
 </div>

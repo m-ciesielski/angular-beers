@@ -12,7 +12,7 @@ export class BeerFilterPipe implements PipeTransform {
     }
     // TODO: create filter model?
     if (key === 'name') {
-      return beers.filter(b => b.name.includes(value));
+      return beers.filter(b => b.name.toLowerCase().includes(value.toLowerCase()));
     }
 
     if (key === 'priceMin') {

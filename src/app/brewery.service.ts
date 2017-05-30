@@ -12,7 +12,14 @@ export class BreweryService {
     return Promise.resolve(BREWERIES);
   };
   getBrewery(id: number): Promise<Brewery> {
-    return Promise.resolve(this.getBreweries().then(beers => beers.find(b => b.id === id)));
+    return Promise.resolve(this.getBreweries().then(breweries => breweries.find(b => b.id === id)));
   };
+  addBrewery(beer: Beer) {
+    BREWERIES.push(beer);
+  }
+  deleteBrewery(id: number) {
+    console.log('Delete beer with id: ' + id);
+    BREWERIES.splice(id, 1);
+  }
 
 }
