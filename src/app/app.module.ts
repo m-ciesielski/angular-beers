@@ -23,6 +23,7 @@ import { BreweriesComponent } from './breweries/breweries.component';
 import { BeerFilterPipe } from './pipes/beer-filter.pipe';
 import { BreweryAddComponent } from './brewery-add/brewery-add.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {RatingModule} from 'ngx-rating';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     MdIconModule,
     MdSelectModule,
     MdLineModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    RatingModule
   ],
   providers: [BeerService, BreweryService],
   bootstrap: [AppComponent]

@@ -4,6 +4,18 @@
     <button md-raised-button (click)="deleteBeer()" class="delete-button">Delete</button>
   </p>
   <p>
+    <rating [(ngModel)]="beer.rating"
+            [max]="5"
+            iconClass="star-icon"
+            fullIcon="★"
+            emptyIcon="☆"
+            [readonly]="false"
+            [required]="false"
+            [float]="true"
+            [titles]="['one', 'two', 'three', 'four', 'five']">
+    </rating>
+  </p>
+  <p>
     <md-input-container>
       <input mdInput [(ngModel)]="beer.id" placeholder="ID" disabled/>
     </md-input-container>

@@ -5,5 +5,5 @@ export class Beer {
   name: string;
   price?: number;
   brewery?: Brewery;
-  style?: BeerStyle;
+  rating?: number;
 }
