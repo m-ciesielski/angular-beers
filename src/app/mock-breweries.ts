@@ -1,7 +1,7 @@
 import {Brewery} from './brewery';
 import {BEERS} from './mock-beers';
 
-export const BREWERIES: Brewery[] = [
+export let BREWERIES: Brewery[] = [
   { id: 11, name: 'SuperBrowar' },
   { id: 12, name: 'NarcoBrowwar' },
   { id: 13, name: 'BombastoBrowar' },

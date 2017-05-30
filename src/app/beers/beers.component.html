@@ -7,11 +7,12 @@
     </md-input-container>
   </p>
   <md-list class="beers">
-    <md-list-item *ngFor="let beer of beers | beerFilter : 'name' : nameFilter" (click)="onSelect(beer)">
-      <md-icon md-list-icon>folder</md-icon>
+      <md-list-item md-l *ngFor="let beer of beers | beerFilter : 'name' : nameFilter | paginate: { itemsPerPage: 10, currentPage: p }" (click)="onSelect(beer)">
+      <!--<md-icon md-list-icon>folder</md-icon>-->
       <h4 md-line>{{beer.name}}</h4>
       <p md-line *ngIf="beer.brewery">{{beer.brewery.name}}</p>
     </md-list-item>
   </md-list>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 

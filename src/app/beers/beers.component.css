@@ -32,6 +32,11 @@
   top: -3px;
 }
 
+.bottleCapImage {
+  height: 40px;
+  width: 40px;
+}
+
 /*.center {*/
   /*margin: auto;*/
   /*width: 50%;*/
