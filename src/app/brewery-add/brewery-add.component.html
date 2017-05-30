@@ -1,0 +1,11 @@
+<div class="center">
+  <h1>Add brewery</h1>
+  <form (ngSubmit)="addBrewery()" #breweryForm="ngForm">
+    <p>
+      <md-input-container>
+        <input mdInput placeholder="Name" value="name" required [(ngModel)]="model.name" name="name">
+      </md-input-container>
+    </p>
+    <button md-raised-button type="submit" [disabled]="!breweryForm.form.valid">Submit</button>
+  </form>
+</div>
