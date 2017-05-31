@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class BreweriesComponent implements OnInit {
   breweries: Brewery[];
+  nameFilter: string;
 
   constructor(private breweryService: BreweryService, private router: Router) { }
 
