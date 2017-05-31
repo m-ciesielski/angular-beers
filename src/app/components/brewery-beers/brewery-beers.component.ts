@@ -27,8 +27,7 @@ export class BreweryBeersComponent implements OnInit {
       );
   }
   getBeers(): void {
-    this.beerService.getBeers().then(
-      beers => this.beers = beers.filter(b => b.brewery !== undefined).filter(b => b.brewery.id === this.brewery.id));
+    this.beers = this.breweryService.getBeers(this.brewery);
   }
   onSelect(beer: Beer): void {
     this.gotoBeer(beer);

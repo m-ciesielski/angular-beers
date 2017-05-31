@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Brewery} from '../models/brewery';
 import {BREWERIES} from './mock-breweries';
 import {Beer} from '../models/beer';
+import {BEERS} from './mock-beers';
 
 @Injectable()
 export class BreweryService {
@@ -26,7 +27,11 @@ export class BreweryService {
     BREWERIES.splice(BREWERIES.indexOf(brewery), 1);
   }
   getBeers(brewery: Brewery) {
-    return brewery.beers;
+    return BEERS.filter(b => b.brewery !== undefined).filter(b => b.brewery.id === brewery.id);
+  }
+  getAverageRating(brewery: Brewery) {
+    const breweryBeers = this.getBeers(brewery);
+    return breweryBeers.map(b => b.rating).reduce((a, b) => a + b, 0) / breweryBeers.length;
   }
 
 }

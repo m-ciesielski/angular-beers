@@ -15,12 +15,18 @@ import {BeerService} from '../../services/beer.service';
 })
 export class BreweryDetailComponent implements OnInit {
   @Input() brewery: Brewery;
+  averageRating: number;
   constructor(private breweryService: BreweryService,
               private route: ActivatedRoute, private location: Location) { }
   ngOnInit() {
     this.route.params.
     switchMap((params: Params) => this.breweryService.getBrewery(+params['id']))
-      .subscribe(brewery => this.brewery = brewery);
+      .subscribe(
+        brewery => {
+          this.brewery = brewery;
+          this.averageRating = this.breweryService.getAverageRating(brewery);
+        }
+      );
   }
   // TODO: Add canDeactivate guard, so user cannot exit app using goBack method
   goBack(): void {

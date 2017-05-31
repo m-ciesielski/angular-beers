@@ -4,6 +4,18 @@
     <button md-raised-button (click)="deleteBrewery()" class="delete-button">Delete</button>
   </p>
   <p>
+  <h3>Average rating of this brewery beers: </h3>
+   <rating md-line [(ngModel)]="averageRating"
+           [max]="5"
+           iconClass="star-icon"
+           fullIcon="★"
+           emptyIcon="☆"
+           [readonly]="true"
+           [required]="false"
+           [float]="true"
+           [titles]="['one', 'two', 'three', 'four', 'five']">
+   </rating>
+  <p>
     <md-input-container>
       <input mdInput [(ngModel)]="brewery.id" placeholder="ID" disabled/>
     </md-input-container>
