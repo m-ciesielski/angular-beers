@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Brewery} from '../brewery';
-import {BreweryService} from '../brewery.service';
+import {Brewery} from '../../models/brewery';
+import {BreweryService} from '../../services/brewery.service';
 import {Location} from '@angular/common';
 
 @Component({

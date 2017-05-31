@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Beer} from '../beer';
-import {BeerService} from '../beer.service';
+import {Beer} from '../../models/beer';
+import {BeerService} from '../../services/beer.service';
 import {Location} from '@angular/common';
-import {BreweryService} from '../brewery.service';
-import {Brewery} from '../brewery';
+import {BreweryService} from '../../services/brewery.service';
+import {Brewery} from '../../models/brewery';
 
 @Component({
   selector: 'app-beer-add',

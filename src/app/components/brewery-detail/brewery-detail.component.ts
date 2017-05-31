@@ -3,11 +3,10 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import {Brewery} from '../brewery';
-import {BreweryService} from '../brewery.service';
-import {Beer} from '../beer';
-import {BeerService} from '../beer.service';
-import {isUndefined} from 'util';
+import {Brewery} from '../../models/brewery';
+import {BreweryService} from '../../services/brewery.service';
+import {Beer} from '../../models/beer';
+import {BeerService} from '../../services/beer.service';
 
 @Component({
   selector: 'app-brewery-detail',

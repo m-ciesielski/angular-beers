@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import {BeerDetailComponent} from './beer-detail/beer-detail.component';
-import {BeersComponent} from './beers/beers.component';
-import {BreweryDetailComponent} from './brewery-detail/brewery-detail.component';
-import {BeerAddComponent} from './beer-add/beer-add.component';
-import {BreweriesComponent} from './breweries/breweries.component';
-import {BreweryAddComponent} from './brewery-add/brewery-add.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {BeerDetailComponent} from './components/beer-detail/beer-detail.component';
+import {BeersComponent} from './components/beers/beers.component';
+import {BreweryDetailComponent} from './components/brewery-detail/brewery-detail.component';
+import {BeerAddComponent} from './components/beer-add/beer-add.component';
+import {BreweriesComponent} from './components/breweries/breweries.component';
+import {BreweryAddComponent} from './components/brewery-add/brewery-add.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

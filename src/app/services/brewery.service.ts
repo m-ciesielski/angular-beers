@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Brewery} from './brewery';
+import {Brewery} from '../models/brewery';
 import {BREWERIES} from './mock-breweries';
-import {Beer} from './beer';
+import {Beer} from '../models/beer';
 
 @Injectable()
 export class BreweryService {

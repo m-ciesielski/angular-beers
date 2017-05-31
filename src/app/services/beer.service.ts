@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Beer} from './beer';
+import {Beer} from '../models/beer';
 import {BEERS} from './mock-beers';
 
 @Injectable()

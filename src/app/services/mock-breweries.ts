@@ -1,4 +1,4 @@
-import {Brewery} from './brewery';
+import {Brewery} from '../models/brewery';
 import {BEERS} from './mock-beers';
 
 export let BREWERIES: Brewery[] = [

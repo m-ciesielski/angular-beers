@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Beer} from '../beer';
-import {BeerService} from '../beer.service';
+import {Beer} from '../../models/beer';
+import {BeerService} from '../../services/beer.service';
 
 @Component({
   selector: 'app-dashboard',

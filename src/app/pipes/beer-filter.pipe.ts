@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Beer} from '../beer';
+import {Beer} from '../models/beer';
 
 @Pipe({
   name: 'beerFilter'

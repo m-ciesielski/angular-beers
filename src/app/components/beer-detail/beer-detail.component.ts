@@ -4,8 +4,8 @@ import { Location } from '@angular/common';
 import {Router} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
-import {Beer} from '../beer';
-import {BeerService} from '../beer.service';
+import {Beer} from '../../models/beer';
+import {BeerService} from '../../services/beer.service';
 
 @Component({
   selector: 'app-beer-detail',
