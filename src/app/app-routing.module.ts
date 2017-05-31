@@ -7,6 +7,7 @@ import {BreweryDetailComponent} from './components/brewery-detail/brewery-detail
 import {BeerAddComponent} from './components/beer-add/beer-add.component';
 import {BreweriesComponent} from './components/breweries/breweries.component';
 import {BreweryAddComponent} from './components/brewery-add/brewery-add.component';
+import {BreweryBeersComponent} from './components/brewery-beers/brewery-beers.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'beers/:id', component: BeerDetailComponent },
   { path: 'beers',     component: BeersComponent },
   { path: 'breweries/add',     component: BreweryAddComponent },
+  { path: 'breweries/:id/beers',     component: BreweryBeersComponent },
   { path: 'breweries/:id',     component: BreweryDetailComponent },
   { path: 'breweries',     component: BreweriesComponent },
 ];

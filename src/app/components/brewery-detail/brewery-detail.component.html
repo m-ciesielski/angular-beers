@@ -13,14 +13,11 @@
       <input mdInput [(ngModel)]="brewery.name" placeholder="Name"/>
     </md-input-container>
   </p>
-  <p *ngIf="beers">
-    <label for="beers">Beers: </label>
-    <md-list *ngFor="let beer of beers" id="beers">
-      <md-list-item (click)="onSelect(beer)">{{beer.name}} </md-list-item>
-    </md-list>
+  <p>
+    <button md-raised-button routerLink="/breweries/{{brewery.id}}/beers" routerLinkActive="active">
+      Show brewery's beers
+    </button>
   </p>
-  <div>
-  </div>
   <button md-raised-button (click)="goBack()">Back</button>
 </div>
 

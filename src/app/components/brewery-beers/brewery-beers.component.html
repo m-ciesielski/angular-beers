@@ -1,0 +1,26 @@
+<h2 *ngIf="brewery">{{brewery.name}} beers:</h2>
+<div *ngIf="beers">
+<p>
+  <md-input-container>
+    <input mdInput placeholder="Filter by name" value="Filter by name" [(ngModel)]="nameFilter" name="nameFilter">
+  </md-input-container>
+</p>
+  <md-list class="beers">
+    <md-list-item *ngFor="let beer of beers | beerFilter : 'name' : nameFilter | paginate: { itemsPerPage: 10, currentPage: p }" id="beers" (click)="onSelect(beer)">
+      <h4 md-line>{{beer.name}}</h4>
+      <rating md-line [(ngModel)]="beer.rating"
+              [max]="5"
+              iconClass="star-icon"
+              fullIcon="★"
+              emptyIcon="☆"
+              [readonly]="true"
+              [required]="false"
+              [float]="true"
+              [titles]="['one', 'two', 'three', 'four', 'five']">
+      </rating>
+    </md-list-item>
+  </md-list>
+
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+<button md-raised-button (click)="goBack()">Back</button>

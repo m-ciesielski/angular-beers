@@ -24,6 +24,7 @@ import { BreweryAddComponent } from './components/brewery-add/brewery-add.compon
 import {NgxPaginationModule} from 'ngx-pagination';
 import {RatingModule} from 'ngx-rating';
 import { BreweryFilterPipe } from './pipes/brewery-filter.pipe';
+import { BreweryBeersComponent } from './components/brewery-beers/brewery-beers.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { BreweryFilterPipe } from './pipes/brewery-filter.pipe';
     BreweriesComponent,
     BeerFilterPipe,
     BreweryAddComponent,
-    BreweryFilterPipe
+    BreweryFilterPipe,
+    BreweryBeersComponent
   ],
   imports: [
     BrowserModule,

@@ -25,5 +25,8 @@ export class BreweryService {
     console.log('Delete brewery with id: ' + brewery.id);
     BREWERIES.splice(BREWERIES.indexOf(brewery), 1);
   }
+  getBeers(brewery: Brewery) {
+    return brewery.beers;
+  }
 
 }
