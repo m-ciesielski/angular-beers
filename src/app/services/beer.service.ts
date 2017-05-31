@@ -4,7 +4,10 @@ import {BEERS} from './mock-beers';
 
 @Injectable()
 export class BeerService {
-  constructor() { };
+  lastId: number;
+  constructor() {
+    this.getBeers().then(beers => this.lastId = Math.max.apply(null, beers.map(b => b.id)));
+  };
   getBeers(): Promise<Beer[]> {
     return Promise.resolve(BEERS);
   };
@@ -18,10 +21,12 @@ export class BeerService {
     });
   }
   addBeer(beer: Beer) {
+    this.lastId += 1;
+    beer.id = this.lastId;
     BEERS.push(beer);
   }
-  deleteBeer(id: number) {
-    console.log('Delete beer with id: ' + id);
-    BEERS.splice(id, 1);
+  deleteBeer(beer: Beer) {
+    console.log('Delete beer with id: ' + beer.id);
+    BEERS.splice(BEERS.indexOf(beer), 1);
   }
 }

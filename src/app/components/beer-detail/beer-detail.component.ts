@@ -32,7 +32,7 @@ export class BeerDetailComponent implements OnInit {
     this.router.navigate(['/breweries', this.beer.brewery.id]);
   }
   deleteBeer(): void {
-    this.beerService.deleteBeer(this.beer.id);
+    this.beerService.deleteBeer(this.beer);
     this.goBack();
   }
 }

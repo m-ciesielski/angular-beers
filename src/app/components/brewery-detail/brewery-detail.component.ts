@@ -42,5 +42,9 @@ export class BreweryDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+  deleteBrewery(): void {
+    this.breweryService.deleteBrewery(this.brewery);
+    this.goBack();
+  }
 
 }

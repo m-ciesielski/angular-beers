@@ -1,6 +1,9 @@
 <div *ngIf="brewery">
   <h2>{{brewery.name}} details:</h2>
   <p>
+    <button md-raised-button (click)="deleteBrewery()" class="delete-button">Delete</button>
+  </p>
+  <p>
     <md-input-container>
       <input mdInput [(ngModel)]="brewery.id" placeholder="ID" disabled/>
     </md-input-container>

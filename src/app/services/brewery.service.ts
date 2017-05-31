@@ -5,8 +5,10 @@ import {Beer} from '../models/beer';
 
 @Injectable()
 export class BreweryService {
-
-  constructor() { }
+  lastId: number;
+  constructor() {
+    this.getBreweries().then(breweries => this.lastId = Math.max.apply(null, breweries.map(b => b.id)));
+  }
 
   getBreweries(): Promise<Brewery[]> {
     return Promise.resolve(BREWERIES);
@@ -14,12 +16,14 @@ export class BreweryService {
   getBrewery(id: number): Promise<Brewery> {
     return Promise.resolve(this.getBreweries().then(breweries => breweries.find(b => b.id === id)));
   };
-  addBrewery(beer: Beer) {
-    BREWERIES.push(beer);
+  addBrewery(brewery: Brewery) {
+    this.lastId += 1;
+    brewery.id = this.lastId;
+    BREWERIES.push(brewery);
   }
-  deleteBrewery(id: number) {
-    console.log('Delete beer with id: ' + id);
-    BREWERIES.splice(id, 1);
+  deleteBrewery(brewery: Brewery) {
+    console.log('Delete brewery with id: ' + brewery.id);
+    BREWERIES.splice(BREWERIES.indexOf(brewery), 1);
   }
 
 }
