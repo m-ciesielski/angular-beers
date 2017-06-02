@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
-  MdButtonModule, MdIconModule, MdInputModule, MdLineModule,
+  MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdLineModule,
   MdListModule, MdMenuModule, MdSelectModule, MdToolbarModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -55,6 +55,7 @@ import { BreweryBeersComponent } from './components/brewery-beers/brewery-beers.
     MdIconModule,
     MdSelectModule,
     MdLineModule,
+    MdCardModule,
     NgxPaginationModule,
     RatingModule
   ],

@@ -1,8 +1,22 @@
 <h3>Top Beers</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let beer of beers" [routerLink]="['/beers', beer.id]" class="col-1-4">
-    <div class="module beer">
-      <h4>{{beer.name}}</h4>
-    </div>
+  <a *ngFor="let beer of beers | beerFilter | slice:0:4" [routerLink]="['/beers', beer.id]" class="col-1-4">
+    <md-card>
+      <md-card-title>{{beer.name}}</md-card-title>
+      <md-card-content>
+        <p>
+          <rating [(ngModel)]="beer.rating"
+                  [max]="5"
+                  iconClass="star-icon"
+                  fullIcon="★"
+                  emptyIcon="☆"
+                  [readonly]="false"
+                  [required]="false"
+                  [float]="true"
+                  [titles]="['one', 'two', 'three', 'four', 'five']">
+          </rating>
+        </p>
+      </md-card-content>
+    </md-card>
   </a>
 </div>

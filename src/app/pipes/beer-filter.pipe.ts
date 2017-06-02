@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import {Beer} from '../models/beer';
 
 @Pipe({
-  name: 'beerFilter'
+  name: 'beerFilter',
+  pure: false
 })
 export class BeerFilterPipe implements PipeTransform {
   // static sortByRating(beers: Beer[]): void {
